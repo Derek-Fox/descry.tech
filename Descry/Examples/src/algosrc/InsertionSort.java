@@ -17,7 +17,7 @@ public class InsertionSort {
     }
 
     private static void run() {
-        drawArray();
+        insertionSort(arr);
 
     }
 
