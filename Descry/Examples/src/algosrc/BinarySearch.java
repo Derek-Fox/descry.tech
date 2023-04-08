@@ -96,19 +96,22 @@ public class BinarySearch {
 
 
     private static int binarySearch(int[] arr, int target) {
-        return binarySearch(arr, target, 0, arr.length - 1 );
+        return binarySearch(arr, target, 0, arr.length - 1);
     }
 
     private static int binarySearch(int[] arr, int target, int low, int high) {
         drawArray(arr[low], arr[high]);
         if (high < low)
             return -low; // value would be inserted at index "low"
-        int mid = (low + high) / 2;
-        if (arr[mid] > target)
-            return binarySearch(arr, target, low, mid - 1);
-        else if (arr[mid] < target)
-            return binarySearch(arr, target, mid + 1, high);
-        else
-            return mid;
         }
+
+        int mid = (low + high) / 2;
+        if (arr[mid] > target) {
+            return binarySearch(arr, target, low, mid - 1);
+        } else if (arr[mid] < target) {
+            return binarySearch(arr, target, mid + 1, high);
+        }
+
+        return mid;
     }
+}

@@ -15,7 +15,7 @@ public class Application {
         _script = new ScriptAdapter(algorithm);
     }
 
-    public void run() {
+    public void launch() {
         PApplet.main(PAppletImpl.class);
     }
 
@@ -41,6 +41,11 @@ public class Application {
         public void renderFrame(Graphics g) {
             _binding.setInvocationTarget(Graphics.class, g);
             update(); // Yield control to script's thread.
+        }
+
+        @Override
+        public void setFrameRate(float x) {
+            PAppletImpl.setFrameRate(x);
         }
 
         @Override

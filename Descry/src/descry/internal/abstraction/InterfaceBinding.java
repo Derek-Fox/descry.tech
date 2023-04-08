@@ -3,7 +3,10 @@ package descry.internal.abstraction;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.function.Supplier;
 
 public class InterfaceBinding implements InvocationHandler {
@@ -49,7 +52,7 @@ public class InterfaceBinding implements InvocationHandler {
             return null;
         }
 
-        method.setAccessible(true); // TODO: Fix this? Restrict use cases?
+        //TODO: May be inaccessible, etc...
         return method.invoke(invocationTargetSupplier.get(), args);
     }
 }
