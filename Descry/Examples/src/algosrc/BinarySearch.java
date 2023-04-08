@@ -1,16 +1,25 @@
+package algosrc;
+
+import descry.Descry;
+
 public class BinarySearch {
+
     public static void main(String[] args) {
+        Descry.visualize(controller -> {
+            run();
+        });
+    }
+
+    private static void run() {
         int[] arr = {1, 3, 7, 10};
         System.out.println(binarySearch(arr, 1));
         System.out.println(binarySearch(arr, 3));
         System.out.println(binarySearch(arr, 7));
         System.out.println(binarySearch(arr, 10));
         System.out.println(binarySearch(arr, 5));
-
-
     }
 
-    public static int binarySearch(int[] arr, int target) {
+    private static int binarySearch(int[] arr, int target) {
         return binarySearch(arr, target, 0, arr.length - 1 );
     }
 
@@ -24,6 +33,5 @@ public class BinarySearch {
             return binarySearch(arr, target, mid + 1, high);
         else
             return mid;
-
         }
     }
