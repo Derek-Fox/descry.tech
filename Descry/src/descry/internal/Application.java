@@ -44,6 +44,11 @@ public class Application {
         }
 
         @Override
+        public void setFrameRate(float x) {
+            PAppletImpl.setFrameRate(x);
+        }
+
+        @Override
         public void beginFrame() {
             beginUpdate();
         }

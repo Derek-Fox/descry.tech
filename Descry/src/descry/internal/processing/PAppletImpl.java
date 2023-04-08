@@ -9,6 +9,12 @@ public class PAppletImpl extends PApplet {
     public static int CanvasSizeY = 600;
     private static Application _app;
 
+    private static PAppletImpl _instance;
+
+    public PAppletImpl() {
+        _instance = this;
+    }
+
     public static void configure(Application app, int sizeX, int sizeY) {
         _app = app;
         CanvasSizeX = sizeX;
@@ -17,6 +23,13 @@ public class PAppletImpl extends PApplet {
 
     public static void main(String[] args) {
         PApplet.main(PAppletImpl.class);
+    }
+
+    public static void setFrameRate(float x) {
+        if (_instance == null) {
+            throw new RuntimeException();
+        }
+        _instance.frameRate(x);
     }
 
     @Override

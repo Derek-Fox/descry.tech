@@ -29,6 +29,7 @@ public class Hanoi implements VisualAlgorithm {
     @Override
     public void run(VisualDebugger graphics) {
         graphics.rectangleMode(CENTER);
+        graphics.setFrameRate(1);
         Log.info("Hanoi", "Script started.");
         _graphics = graphics;
         drawTowers();
