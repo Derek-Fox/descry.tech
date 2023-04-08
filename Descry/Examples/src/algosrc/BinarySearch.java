@@ -73,7 +73,7 @@ public class BinarySearch implements VisualAlgorithm {
     private void drawArray(int low, int high, int target) {
 
         _graphics.beginFrame();
-        _graphics.clear();
+        _graphics.background(0);
 
         float sizeX = _graphics.getSizeX() * 0.8f;
         float sizeY = _graphics.getSizeY() * 0.2f;
