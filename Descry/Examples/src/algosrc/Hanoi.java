@@ -28,8 +28,6 @@ public class Hanoi implements VisualAlgorithm {
 
     @Override
     public void run(VisualDebugger graphics) {
-        graphics.rectangleMode(CENTER);
-        graphics.setFrameRate(1);
         Log.info("Hanoi", "Script started.");
         _graphics = graphics;
         drawTowers();
@@ -60,7 +58,9 @@ public class Hanoi implements VisualAlgorithm {
         float diskMaxSizeX = pegSpacing * 0.9f;
 
         _graphics.beginFrame();
-        _graphics.clear();
+        _graphics.rectangleMode(CENTER);
+        _graphics.setFrameRate(8);
+        _graphics.background(200);
         _pegA.render(_graphics, pegAX, pegBaseY, diskMinSizeX, diskMaxSizeX, diskHeight);
         _pegB.render(_graphics, canvasCenterX, pegBaseY, diskMinSizeX, diskMaxSizeX, diskHeight);
         _pegC.render(_graphics, pegCX, pegBaseY, diskMinSizeX, diskMaxSizeX, diskHeight);

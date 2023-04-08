@@ -1,7 +1,5 @@
 package descry.utility;
 
-import java.util.List;
-
 public class Random {
 
     private static final java.util.Random _rng = new java.util.Random();
@@ -45,8 +43,12 @@ public class Random {
         return _rng.nextBoolean();
     }
 
-    public static <T> T choice(List<T> pool) {
-        return pool.get(range(pool.size()));
+    public static int choice(int[] pool) {
+        return pool[range(pool.length)];
+    }
+
+    public static <T> T choice(T[] pool) {
+        return pool[range(pool.length)];
     }
 
     public static void shuffle(Object[] array) {
