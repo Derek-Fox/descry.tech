@@ -7,15 +7,22 @@
   min-height: 100vh;
 }
 
-.description {
+.navbar {
   display: inherit;
+  flex-direction: column;
   justify-content: inherit;
   align-items: inherit;
-  font-size: 0.85rem;
   max-width: var(--max-width);
   width: 100%;
-  z-index: 2;
   font-family: var(--font-mono);
+}
+
+.title h1 {
+  font-size: 4em;
+}
+
+.subtitle h2 {
+  font-weight: normal;
 }
 
 .description a {
