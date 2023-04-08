@@ -1,6 +1,6 @@
 package descry.internal;
 
-interface FrameContext {
+public interface FrameContext {
 
     void beginFrame();
 

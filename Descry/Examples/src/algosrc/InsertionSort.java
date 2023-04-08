@@ -6,6 +6,7 @@ import descry.internal.VisualDebugger;
 import java.util.Arrays;
 
 public class InsertionSort {
+
     private static VisualDebugger graphics;
     private static final int[] arr = {3, 2, 6, 4};
 
@@ -18,10 +19,10 @@ public class InsertionSort {
 
     private static void run() {
         insertionSort(arr);
-
     }
 
     private static void drawArray() {
+
         float sizeX = graphics.getSizeX() * 0.8f;
         float sizeY = graphics.getSizeY() * 0.2f;
         float localCenterX = sizeX * 0.5f;
@@ -36,7 +37,7 @@ public class InsertionSort {
         float cellSizeX = sizeX / cellCount;
 
         for (int i = 0; i < cellCount; i++) {
-            float cellX = i * cellSizeX * lowerX;
+            float cellX = i * cellSizeX + lowerX;
             graphics.rectangle(cellX, lowerY, cellSizeX, sizeY);
             graphics.text(Integer.toString(arr[i]), cellX, lowerY);
         }

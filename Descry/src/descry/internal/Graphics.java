@@ -1,6 +1,6 @@
 package descry.internal;
 
-interface Graphics {
+public interface Graphics {
 
     int getSizeX();
 
@@ -49,8 +49,6 @@ interface Graphics {
 
     void strokeWeight(float weight);
 
-    void textAlign(int x, int y);
-
     void noStroke();
 
     void strokeColor(int grey);
@@ -73,7 +71,7 @@ interface Graphics {
     //endregion
 
     //region Draw Commands
-    void line(float aX, float aY, float bX, float bY);
+    void line(float x0, float y0, float x1, float y1);
 
     void text(String text, float x, float y);
 
