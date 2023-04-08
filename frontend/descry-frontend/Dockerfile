@@ -15,4 +15,5 @@ RUN npm install
 COPY . .
 
 # Starting our application
+RUN npm build
 CMD npm start
