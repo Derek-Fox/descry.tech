@@ -172,6 +172,11 @@ public class PGraphicsWrapper implements Graphics {
     }
 
     @Override
+    public void textAlign(int modeX, int modeY) {
+        _g.textAlign(modeX, modeY);
+    }
+
+    @Override
     public void text(String text, float x, float y) {
         _g.text(text, x, y);
     }
@@ -187,6 +192,11 @@ public class PGraphicsWrapper implements Graphics {
     }
 
     @Override
+    public void rectangleMode(int mode) {
+        _g.rectMode(mode);
+    }
+
+    @Override
     public void rectangle(float x0, float y0, float x1, float y1) {
         _g.rect(x0, y0, x1, y1);
     }
@@ -194,6 +204,11 @@ public class PGraphicsWrapper implements Graphics {
     @Override
     public void circle(float x, float y, float radius) {
         _g.circle(x, y, radius);
+    }
+
+    @Override
+    public void ellipseMode(int mode) {
+        _g.ellipseMode(mode);
     }
 
     @Override

@@ -73,15 +73,21 @@ public interface Graphics {
     //region Draw Commands
     void line(float x0, float y0, float x1, float y1);
 
+    void textAlign(int modeX, int modeY);
+
     void text(String text, float x, float y);
 
     void textSize(float size);
 
     void point(float x, float y);
 
+    void rectangleMode(int mode);
+
     void rectangle(float x0, float y0, float x1, float y1);
 
     void circle(float x, float y, float radius);
+
+    void ellipseMode(int mode);
 
     void ellipse(float x0, float y0, float x1, float y1);
     //endregion

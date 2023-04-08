@@ -4,6 +4,6 @@ import descry.internal.VisualDebugger;
 
 public interface VisualAlgorithm extends Constants {
 
-    void run(VisualDebugger controller);
+    void run(VisualDebugger graphics);
 
 }

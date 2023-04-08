@@ -15,7 +15,7 @@ public class Application {
         _script = new ScriptAdapter(algorithm);
     }
 
-    public void run() {
+    public void launch() {
         PApplet.main(PAppletImpl.class);
     }
 
