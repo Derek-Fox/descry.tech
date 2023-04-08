@@ -1,16 +1,13 @@
 import Head from 'next/head'
 
-import React, {useRef} from "react";
-
-
 import Image from 'next/image'
-
 import code1 from '../public/code1.svg'
 import code2 from '../public/code2.svg'
 import code3 from '../public/code3.svg'
 import code4 from '../public/code4.svg'
 import code5 from '../public/code5.svg'
 import code6 from '../public/code6.svg'
+import eye from '../public/eye.png'
 
 import {Inter} from 'next/font/google'
 import styles from '@/styles/Home.module.css'
@@ -24,21 +21,13 @@ export default function Home() {
                 <title>Descry - Algorithms Visualized</title>
                 <meta name="description" content="A collection of intuitive visualizations of algorithms."/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                {/* <link rel="icon" href="/favicon.ico" /> */}
+                <link rel="icon" type='image/x-icon' href='../public/favicon.ico'/>
             </Head>
             <main className={styles.main}>
-                <div className={styles.navbar}>
-                    <div className={styles.title}>
-                        <h1>Descry</h1>
-                    </div>
-                    <div className={styles.subtitle}>
-                        <h2>Algorithms Visualized</h2>
-                    </div>
-                </div>
 
                 <Algorithms/>
 
-                <div className={styles.information}>
+                <div className={styles.information} id="about">
                     <div className={styles.infoBox}>
                         <div>
                             <h1>LEARN </h1>

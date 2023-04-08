@@ -1,0 +1,51 @@
+
+
+.title h1 {
+    font-size: 4em;
+}
+
+.subtitle h2 {
+    font-weight: normal;
+}
+
+.titleBox {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin-right: 2.5em;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.menus {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0 auto;
+
+    margin-top: 2em;
+
+    width: 50%;
+}
+
+.navbar {
+    background-color: rgb(209, 214, 215);
+    outline: 1px black solid;
+    width: 100%;
+    position: relative;
+
+    width: calc(100vw);
+    margin: 1em 0 1em calc(-50vw + 50% - 6px); /* top right bottom left */
+}
+
+.menus li {
+    font-size: 1.3em;
+    list-style: none;
+}

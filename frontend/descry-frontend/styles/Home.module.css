@@ -3,25 +3,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
-}
-
-.navbar {
-  display: inherit;
-  flex-direction: column;
-  justify-content: inherit;
-  align-items: inherit;
-  max-width: var(--max-width);
-  width: 100%;
-}
-
-.title h1 {
-  font-size: 4em;
-}
-
-.subtitle h2 {
-  font-weight: normal;
+  padding: 5em;
 }
 
 .algorithms {
@@ -30,7 +12,6 @@
   flex-direction: column;
 
   height: 100%;
-  margin-top: 7em;
   margin-bottom: 7em;
 }
 
