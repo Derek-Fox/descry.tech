@@ -1,6 +1,10 @@
 import Head from 'next/head'
 
+import React, {useRef} from "react";
+
+
 import Image from 'next/image'
+
 import code1 from '../public/code1.svg'
 import code2 from '../public/code2.svg'
 import code3 from '../public/code3.svg'
@@ -32,85 +36,64 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className={styles.algorithms}>
-                    <AlgorithmBox name={"QuickSort"} image={code1}/>
-                    <AlgorithmBox name={"MergeSort"} image={code2}/>
-                    <AlgorithmBox name={"Binary Search"} image={code3}/>
-                    <AlgorithmBox name={"Insertion Sort"} image={code4}/>
-                    <AlgorithmBox name={"Dijkstra's Algorithm"} image={code5}/>
-                    <AlgorithmBox name={"Depth First Search"} image={code6}/>
-                </div>
+                <Algorithms/>
 
-                <div className={styles.grid}>
-                    <a
-                        href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                        className={styles.card}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <h2 className={inter.className}>
-                            Docs <span>-&gt;</span>
-                        </h2>
-                        <p className={inter.className}>
-                            Find in-depth information about Next.js features and&nbsp;API.
-                        </p>
-                    </a>
+                <div className={styles.information}>
+                    <div className={styles.infoBox}>
+                        <div>
+                            <h1>LEARN </h1>
+                            <p>algorithms with <u>intuitive</u> and <u>interactive</u> examples.</p>
+                        </div>
 
-                    <a
-                        href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                        className={styles.card}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <h2 className={inter.className}>
-                            Learn <span>-&gt;</span>
-                        </h2>
-                        <p className={inter.className}>
-                            Learn about Next.js in an interactive course with&nbsp;quizzes!
-                        </p>
-                    </a>
+                        <div>
+                            <Image
+                                src={code1}
+                                alt="Image of algorithm"
+                                className={styles.infoBoxImg}
+                            />
+                        </div>
+                    </div>
+                    <div className={styles.infoBox}>
+                        <div>
+                            <Image
+                                src={code2}
+                                alt="Image of algorithm"
+                                className={styles.infoBoxImg}
+                            />
+                        </div>
 
-                    <a
-                        href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                        className={styles.card}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <h2 className={inter.className}>
-                            Templates <span>-&gt;</span>
-                        </h2>
-                        <p className={inter.className}>
-                            Discover and deploy boilerplate example Next.js&nbsp;projects.
-                        </p>
-                    </a>
-
-                    <a
-                        href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                        className={styles.card}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <h2 className={inter.className}>
-                            Deploy <span>-&gt;</span>
-                        </h2>
-                        <p className={inter.className}>
-                            Instantly deploy your Next.js site to a shareable URL
-                            with&nbsp;Vercel.
-                        </p>
-                    </a>
+                        <div>
+                            <h1>WRITE </h1>
+                            <p>code to be <u>dynamically</u> <u>visualized</u> by our graphics engine.</p>
+                        </div>
+                    </div>
                 </div>
             </main>
         </>
     )
 }
 
+function Algorithms() {
+    return (
+        <div className={styles.algorithms}>
+            <div className={styles.algorithmBoxes}>
+                <AlgorithmBox name={"Binary Search"} image={code3}/>
+                <AlgorithmBox name={"Insertion Sort"} image={code4}/>
+                <AlgorithmBox name={"Dijkstra's Algorithm"} image={code5}/>
+                <AlgorithmBox name={"Depth First Search"} image={code6}/>
+            </div>
+        </div>
+
+    );
+}
+
 function AlgorithmBox({name, image}) {
     return (
         <div className={styles.algorithmBox}>
-            <Image c
-                   src={image}
-                   alt="Image of algorithm"
-                   className={styles.algorithmBoxImg}
+            <Image
+                src={image}
+                alt="Image of algorithm"
+                className={styles.algorithmBoxImg}
             />
             <h2>{name}</h2>
         </div>

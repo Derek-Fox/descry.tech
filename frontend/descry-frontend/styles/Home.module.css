@@ -1,7 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
@@ -14,7 +14,6 @@
   align-items: inherit;
   max-width: var(--max-width);
   width: 100%;
-  font-family: var(--font-mono);
 }
 
 .title h1 {
@@ -28,8 +27,11 @@
 .algorithms {
   display: flex;
 
+  flex-direction: column;
+
   height: 100%;
-  margin-top: 1em;
+  margin-top: 7em;
+  margin-bottom: 7em;
 }
 
 .algorithmBox {
@@ -54,6 +56,10 @@
   border-radius: 7px;
 }
 
+.algorithmBoxes {
+  display: flex;
+}
+
 .algorithmBox h2 {
   font-weight: normal;
   font-size: 1.1em;
@@ -62,6 +68,51 @@
 .algorithmBoxImg {
   width: 128px;
   height: 128px;
+}
+
+.information {
+  display: flex;
+
+  flex-direction: column;
+
+  width: 80%;
+
+  font-size: 1.4em;
+
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.infoBox div {
+  margin-left: 1.2em;
+  margin-right: 1.2em;
+}
+
+.infoBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+
+  margin-bottom: 3em;
+}
+
+.infoBoxImg {
+  width: 128px;
+  height: 128px;
+
+  padding-top: 1em;
+  padding-bottom: 1em;
+
+  outline: 1px solid black;
+
+  border-radius: 7px;
+}
+
+.infoBox h1 {
+  display: inline;
 }
 
 .description a {
