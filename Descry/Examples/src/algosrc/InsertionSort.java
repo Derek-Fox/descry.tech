@@ -5,7 +5,9 @@ import descry.internal.VisualDebugger;
 
 import java.util.Arrays;
 
+//Author: Derek (stinky poo poo)
 public class InsertionSort {
+
     private static VisualDebugger _debugger;
 
     public static void main(String[] args) {
