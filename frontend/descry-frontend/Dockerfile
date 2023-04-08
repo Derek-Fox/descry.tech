@@ -15,4 +15,4 @@ RUN npm install
 COPY . .
 
 # Starting our application
-CMD npm dev
+CMD npm run dev
