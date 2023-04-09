@@ -65,9 +65,9 @@ public class BinarySearch implements VisualAlgorithm {
         Cell midPointCell = _cells[midPoint];
         Cell rangeMinCell = _cells[rangeMin];
         Cell rangeMaxCell = _cells[rangeMax];
-        _midPoint.animateTo(midPoint, midPointCell.x, midPointCell.y - 100f);
-        _rangeMin.animateTo(rangeMin, rangeMinCell.x, rangeMinCell.y - 100f);
-        _rangeMax.animateTo(rangeMax, rangeMaxCell.x, rangeMaxCell.y - 100f);
+        _midPoint.animateTo(midPoint, midPointCell.x + midPointCell.sizeX * 0.5f, midPointCell.y - 100f);
+        _rangeMin.animateTo(rangeMin, rangeMinCell.x + midPointCell.sizeX * 0.5f, rangeMinCell.y - 100f);
+        _rangeMax.animateTo(rangeMax, rangeMaxCell.x + midPointCell.sizeX * 0.5f, rangeMaxCell.y - 100f);
 
         _rangeMin.update(1f);
         _rangeMax.update(1f);
@@ -82,8 +82,13 @@ public class BinarySearch implements VisualAlgorithm {
             }
 
             _midPoint.update(t);
-
             renderFrame();
+        }
+
+        try {
+            Thread.sleep(1000L);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -158,11 +163,6 @@ public class BinarySearch implements VisualAlgorithm {
         private float _sourceY;
         private float _targetX;
         private float _targetY;
-
-        private Pointer(float x, float y) {
-            X = x;
-            Y = y;
-        }
 
         public void update(float time01) {
             X = Mathf.lerp(_sourceX, _targetX, time01);
