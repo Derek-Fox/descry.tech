@@ -90,6 +90,8 @@ public interface Graphics {
     void ellipseMode(int mode);
 
     void ellipse(float x0, float y0, float x1, float y1);
+
+    void arrow(float x0, float y0, float x1, float y1);
     //endregion
 
 }

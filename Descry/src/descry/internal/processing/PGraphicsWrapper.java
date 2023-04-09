@@ -215,4 +215,19 @@ public class PGraphicsWrapper implements Graphics {
     public void ellipse(float x0, float y0, float x1, float y1) {
         _g.ellipse(x0, y0, x1, y1);
     }
+
+    @Override
+    /**
+     * Make sure arrows point down lol.
+     */
+    public void arrow(float x0, float y0, float x1, float y1) {
+        _g.line(x0, y0, x1, y1);
+        float triLen = (float) Math.sqrt(Math.pow(x1 - x0, 2) + Math.pow(y1 - y0, 2)) * 0.2f;
+        float triX1 = x0 + triLen/2;
+        float triY1 = y0 - triLen;
+        float triX2 = x0 - triLen/2;
+        float triY2 = y0 - triLen;
+        _g.triangle(x0, y0, triX1, triY1, triX2, triY2);
+
+    }
 }

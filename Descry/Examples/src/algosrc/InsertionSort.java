@@ -2,12 +2,14 @@ package algosrc;
 
 import descry.Descry;
 import descry.internal.VisualDebugger;
+import descry.Constants;
 
+import javax.swing.*;
 import java.util.Arrays;
 
 public class InsertionSort {
     private static VisualDebugger graphics;
-    private static final int[] arr = {3, 2, 6, 4, 5, 1};
+    private static final int[] arr = {3, 2, 6, 4, 5, 1, 16, 7, 11, 12, 19, 10};
     private static final int BGCOLOR = 100;
 
     public static void main(String[] args) {
@@ -25,6 +27,9 @@ public class InsertionSort {
 
     private static void drawArray(int first, int compare) {
         graphics.beginFrame();
+        graphics.background(BGCOLOR);
+        graphics.strokeWeight(2);
+        graphics.strokeColor(0);
         float sizeX = graphics.getSizeX() * 0.8f;
         float sizeY = graphics.getSizeY() * 0.2f;
         float localCenterX = sizeX * 0.5f;
@@ -45,16 +50,22 @@ public class InsertionSort {
             float cellCenterY = lowerY + (sizeY * 0.5f);
 
             graphics.fillColor(255);
+            graphics.strokeColor(0);
             graphics.rectangle(cellLowerX, lowerY, cellSizeX, sizeY);
 
-            if (arr[i] == first) {
+            if (i == first) {
                 graphics.fillColor(255, 0, 0);
-            } else if (arr[i] == compare) {
+                graphics.strokeColor(255, 0 , 0);
+                graphics.arrow(cellCenterX, cellCenterY - sizeY, cellCenterX, (cellCenterY - sizeY) - 30);
+            } else if (i == compare) {
                 graphics.fillColor(0, 0, 255);
+                graphics.strokeColor(0, 0 , 255);
+                graphics.arrow(cellCenterX, cellCenterY - sizeY, cellCenterX, cellCenterY - sizeY - 30);
             } else {
                 graphics.fillColor(0);
             }
             graphics.textSize(20);
+            graphics.textAlign(Constants.CENTER, Constants.CENTER);
             graphics.text(Integer.toString(arr[i]), cellCenterX, cellCenterY);
 
         }
@@ -139,7 +150,7 @@ public class InsertionSort {
             int value = A[i];
             int j = i - 1;
             while (j >= 0 && A[j] > value) {
-                drawArray(A[i], A[j]);
+                drawArray(i, j);
                 A[j + 1] = A[j];
                 j = j - 1;
             }
