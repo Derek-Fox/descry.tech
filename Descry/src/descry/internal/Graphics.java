@@ -91,7 +91,7 @@ public interface Graphics {
 
     void ellipse(float x0, float y0, float x1, float y1);
 
-    void arrow(float x0, float y0, float x1, float y1);
+    void downArrow(float x0, float y0, float x1, float y1);
     //endregion
 
 }

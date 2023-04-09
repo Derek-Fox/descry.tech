@@ -4,7 +4,6 @@ import descry.Descry;
 import descry.internal.VisualDebugger;
 import descry.Constants;
 
-import javax.swing.*;
 import java.util.Arrays;
 
 public class InsertionSort {
@@ -56,11 +55,11 @@ public class InsertionSort {
             if (i == first) {
                 graphics.fillColor(255, 0, 0);
                 graphics.strokeColor(255, 0 , 0);
-                graphics.arrow(cellCenterX, cellCenterY - sizeY, cellCenterX, (cellCenterY - sizeY) - 30);
+                graphics.downArrow(cellCenterX, cellCenterY - sizeY, cellCenterX, (cellCenterY - sizeY) - 30);
             } else if (i == compare) {
                 graphics.fillColor(0, 0, 255);
                 graphics.strokeColor(0, 0 , 255);
-                graphics.arrow(cellCenterX, cellCenterY - sizeY, cellCenterX, cellCenterY - sizeY - 30);
+                graphics.downArrow(cellCenterX, cellCenterY - sizeY, cellCenterX, cellCenterY - sizeY - 30);
             } else {
                 graphics.fillColor(0);
             }

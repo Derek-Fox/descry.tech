@@ -220,7 +220,7 @@ public class PGraphicsWrapper implements Graphics {
     /**
      * Make sure arrows point down lol.
      */
-    public void arrow(float x0, float y0, float x1, float y1) {
+    public void downArrow(float x0, float y0, float x1, float y1) {
         _g.line(x0, y0, x1, y1);
         float triLen = (float) Math.sqrt(Math.pow(x1 - x0, 2) + Math.pow(y1 - y0, 2)) * 0.2f;
         float triX1 = x0 + triLen/2;

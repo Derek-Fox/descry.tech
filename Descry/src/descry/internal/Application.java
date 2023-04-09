@@ -61,6 +61,9 @@ public class Application {
         @Override
         protected void run() {
             VisualDebugger debugger = (VisualDebugger) _binding.newProxyInstance();
+            //TODO: Render an empty first frame as a work-around to make sure the threads are in step.
+            debugger.beginFrame();
+            debugger.endFrame();
             _script.run(debugger);
         }
     }
