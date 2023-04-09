@@ -1,5 +1,6 @@
 import styles from '@/styles/algorithm.module.css'
 import Head from "next/head";
+import Launch from "@/components/launch";
 
 export default function Home() {
     return (
@@ -29,6 +30,8 @@ export default function Home() {
                     </li>
                 </ul>
             </div>
+
+            <Launch></Launch>
         </>
     );
 }

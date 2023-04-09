@@ -85,7 +85,7 @@ export default function Home() {
                         </li>
                         <li>
                             Download the listed <strong>jar</strong> file.
-                            (NOTE: You must have <strong>Java</strong> installed!)
+                            (NOTE: You must have <strong>Java 19+</strong> installed!)
                         </li>
                         <li>
                             Execute the downloaded file and enjoy your visualization!
