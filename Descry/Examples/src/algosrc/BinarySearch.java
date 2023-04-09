@@ -14,9 +14,9 @@ public class BinarySearch implements VisualAlgorithm {
     private VisualDebugger _graphics;
     private final int[] _values = new int[24];
     private final Cell[] _cells = new Cell[24];
-    private final Pointer _rangeMin = new Pointer(0f, 0f);
-    private final Pointer _rangeMax = new Pointer(0f, 0f);
-    private final Pointer _midPoint = new Pointer(0f, 0f);
+    private final Pointer _rangeMin = new Pointer();
+    private final Pointer _rangeMax = new Pointer();
+    private final Pointer _midPoint = new Pointer();
     private int _targetValue;
 
     public static void main(String[] args) {
