@@ -6,27 +6,24 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Descry - Binary Search</title>
+                <title>Descry - Insertion Sort</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" type='image/x-icon' href='../public/favicon.ico'/>
             </Head>
 
             <div className={styles.main}>
                 <div className={styles.title}>
-                    <h1>Binary Search</h1>
+                    <h1>Insertion Sort</h1>
                 </div>
                 <ul className={styles.description}>
                     <li>
-                        <strong>Binary Search</strong> is a searching algorithm used to find an element's position in a
-                        sorted array.
+                        <strong>Insertion Sort</strong> is a sorting algorithm that places <strong>unsorted elements in their place each iteration</strong>.
                     </li>
                     <li>
-                        The search can be performed <strong>iteratively</strong> or <strong>recursively</strong>.
+                        Insertion sort is similar to how people sort cards.
                     </li>
                     <li>
-                        Essentially, binary
-                        search defines a <strong>high</strong> and a <strong>low</strong> pointer that work together to
-                        "single out" the target value.
+                        This sort is performed by starting with the <strong>first element</strong> and sorting down all the way to the <strong>last element</strong>.
                     </li>
                 </ul>
 

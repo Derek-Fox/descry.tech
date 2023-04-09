@@ -6,27 +6,24 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Descry - Binary Search</title>
+                <title>Descry - Djikstra's Algorithm</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" type='image/x-icon' href='../public/favicon.ico'/>
             </Head>
 
             <div className={styles.main}>
                 <div className={styles.title}>
-                    <h1>Binary Search</h1>
+                    <h1>Djikstra's Algorithm</h1>
                 </div>
                 <ul className={styles.description}>
                     <li>
-                        <strong>Binary Search</strong> is a searching algorithm used to find an element's position in a
-                        sorted array.
+                        <strong>Djikstra's Algorithm</strong> is an algorithm for finding the <strong>shortest weighted path</strong> between two nodes in a graph.
                     </li>
                     <li>
-                        The search can be performed <strong>iteratively</strong> or <strong>recursively</strong>.
+                        Executing this algorithm involves finding <strong>potential minimum distances</strong> between nodes until you find the <strong>optimal</strong> distance.
                     </li>
                     <li>
-                        Essentially, binary
-                        search defines a <strong>high</strong> and a <strong>low</strong> pointer that work together to
-                        "single out" the target value.
+                        This algorithm also works similar to <strong>BFS</strong> in that it visits all nodes level-by-level.
                     </li>
                 </ul>
 

@@ -6,27 +6,21 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Descry - Binary Search</title>
+                <title>Descry - Tower of Hanoi</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" type='image/x-icon' href='../public/favicon.ico'/>
             </Head>
 
             <div className={styles.main}>
                 <div className={styles.title}>
-                    <h1>Binary Search</h1>
+                    <h1>Tower of Hanoi</h1>
                 </div>
                 <ul className={styles.description}>
                     <li>
-                        <strong>Binary Search</strong> is a searching algorithm used to find an element's position in a
-                        sorted array.
+                        <strong>Tower of Hanoi</strong> is a puzzle involving <strong>three vertical pegs</strong> and a set of different sized disks.
                     </li>
                     <li>
-                        The search can be performed <strong>iteratively</strong> or <strong>recursively</strong>.
-                    </li>
-                    <li>
-                        Essentially, binary
-                        search defines a <strong>high</strong> and a <strong>low</strong> pointer that work together to
-                        "single out" the target value.
+                        The <strong>goal</strong> of the puzzle is to <strong>transfer the stack of disks from one peg to another</strong>, such that disks are <strong>moved individually</strong> and <strong>no bigger disk are placed on a smaller disk</strong>.
                     </li>
                 </ul>
 
