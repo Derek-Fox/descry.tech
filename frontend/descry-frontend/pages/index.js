@@ -7,6 +7,9 @@ import code3 from '../public/code3.svg'
 import code4 from '../public/code4.svg'
 import code5 from '../public/code5.svg'
 import code6 from '../public/code6.svg'
+import code7 from '../public/code7.svg'
+import code8 from '../public/code8.svg'
+import code9 from '../public/code9.svg'
 import eye from '../public/eye.png'
 
 import {Inter} from 'next/font/google'
@@ -36,7 +39,7 @@ export default function Home() {
 
                         <div>
                             <Image
-                                src={code1}
+                                src={code8}
                                 alt="Image of algorithm"
                                 className={styles.infoBoxImg}
                             />
@@ -45,7 +48,7 @@ export default function Home() {
                     <div className={styles.infoBox}>
                         <div>
                             <Image
-                                src={code2}
+                                src={code1}
                                 alt="Image of algorithm"
                                 className={styles.infoBoxImg}
                             />
@@ -54,6 +57,20 @@ export default function Home() {
                         <div>
                             <h1>WRITE </h1>
                             <p>code to be <u>dynamically</u> <u>visualized</u> by our graphics engine.</p>
+                        </div>
+                    </div>
+                    <div className={styles.infoBox}>
+                        <div>
+                            <h1>TEACH </h1>
+                            <p>students <u>complicated</u> algorithms with ease.</p>
+                        </div>
+
+                        <div>
+                            <Image
+                                src={code9}
+                                alt="Image of algorithm"
+                                className={styles.infoBoxImg}
+                            />
                         </div>
                     </div>
                 </div>
