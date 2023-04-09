@@ -105,7 +105,7 @@ function Algorithms() {
                 <AlgorithmBox name={"Insertion Sort"} image={code4} url={"insertionSort"}/>
                 <AlgorithmBox name={"Tower of Hanoi"} image={code6} url={"towerOfHanoi"}/>
                 <AlgorithmBox name={"Maze Generator"} image={code2} url={"mazeGenerator"}/>
-                <AlgorithmBox name={"Dijkstra's Algorithm"} image={code5} url={"dijkstrasAlgorithm"}/>
+                <AlgorithmBox name={"Maze Solver"} image={code5} url={"mazeSolver"}/>
             </div>
         </div>
 

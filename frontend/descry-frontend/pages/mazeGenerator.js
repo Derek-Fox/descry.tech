@@ -27,7 +27,7 @@ export default function Home() {
                     </li>
                 </ul>
 
-                <Launch ></Launch>
+                <Launch file="/maze-generator.jar"></Launch>
             </div>
 
         </>

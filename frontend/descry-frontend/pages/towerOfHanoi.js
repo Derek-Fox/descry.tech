@@ -24,7 +24,7 @@ export default function Home() {
                     </li>
                 </ul>
 
-                <Launch file={"/TowerOfHanoi.jar"}/>
+                <Launch file={"/towers-of-hanoi.jar"}/>
             </div>
 
         </>

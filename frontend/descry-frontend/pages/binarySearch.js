@@ -30,7 +30,7 @@ export default function Home() {
                     </li>
                 </ul>
 
-                <Launch></Launch>
+                <Launch file={"/binary-search.jar"}></Launch>
             </div>
 
         </>

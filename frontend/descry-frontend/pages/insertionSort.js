@@ -27,7 +27,7 @@ export default function Home() {
                     </li>
                 </ul>
 
-                <Launch file="/InsertionSort.jar"></Launch>
+                <Launch file="/insertion-sort.jar"></Launch>
             </div>
 
         </>
