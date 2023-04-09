@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class InsertionSort {
     private static VisualDebugger graphics;
-    private static final int[] arr = {3, 2, 6, 4, 5, 1, 16, 7, 11, 12, 19, 10};
+    private static final int[] arr = {3, 2, 6, 1, 5, 4, 16, 7, 11, 12, 19, 10};
     private static final int BGCOLOR = 100;
 
     public static void main(String[] args) {
