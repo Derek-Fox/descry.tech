@@ -27,7 +27,7 @@ export default function Home() {
                     </li>
                 </ul>
 
-                <Launch file={}></Launch>
+                <Launch ></Launch>
             </div>
 
         </>
