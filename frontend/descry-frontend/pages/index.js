@@ -103,8 +103,9 @@ function Algorithms() {
             <div className={styles.algorithmBoxes}>
                 <AlgorithmBox name={"Binary Search"} image={code3}/>
                 <AlgorithmBox name={"Insertion Sort"} image={code4}/>
+                <AlgorithmBox name={"Tower of Hanoi"} image={code6}/>
+                <AlgorithmBox name={"Maze Generator"} image={code2}/>
                 <AlgorithmBox name={"Dijkstra's Algorithm"} image={code5}/>
-                <AlgorithmBox name={"Depth First Search"} image={code6}/>
             </div>
         </div>
 

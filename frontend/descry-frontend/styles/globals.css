@@ -70,3 +70,10 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+@media (max-width: 1600px) {
+  html,
+  body {
+    width: 100%;
+  }
+}
