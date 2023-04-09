@@ -7,13 +7,13 @@ import code3 from '../public/code3.svg'
 import code4 from '../public/code4.svg'
 import code5 from '../public/code5.svg'
 import code6 from '../public/code6.svg'
-import code7 from '../public/code7.svg'
 import code8 from '../public/code8.svg'
 import code9 from '../public/code9.svg'
-import eye from '../public/eye.png'
 
 import {Inter} from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+
+import Link from 'next/link'
 
 const inter = Inter({subsets: ['latin']})
 
@@ -101,26 +101,26 @@ function Algorithms() {
     return (
         <div className={styles.algorithms}>
             <div className={styles.algorithmBoxes}>
-                <AlgorithmBox name={"Binary Search"} image={code3}/>
-                <AlgorithmBox name={"Insertion Sort"} image={code4}/>
-                <AlgorithmBox name={"Tower of Hanoi"} image={code6}/>
-                <AlgorithmBox name={"Maze Generator"} image={code2}/>
-                <AlgorithmBox name={"Dijkstra's Algorithm"} image={code5}/>
+                <AlgorithmBox name={"Binary Search"} image={code3} url={"binarySearch"}/>
+                <AlgorithmBox name={"Insertion Sort"} image={code4} url={"insertionSort"}/>
+                <AlgorithmBox name={"Tower of Hanoi"} image={code6} url={"towerOfHanoi"}/>
+                <AlgorithmBox name={"Maze Generator"} image={code2} url={"mazeGenerator"}/>
+                <AlgorithmBox name={"Dijkstra's Algorithm"} image={code5} url={"dijkstrasAlgorithm"}/>
             </div>
         </div>
 
     );
 }
 
-function AlgorithmBox({name, image}) {
+function AlgorithmBox({name, image, url}) {
     return (
-        <div className={styles.algorithmBox}>
+        <Link href={url} className={styles.algorithmBox}>
             <Image
                 src={image}
                 alt="Image of algorithm"
                 className={styles.algorithmBoxImg}
             />
             <h2>{name}</h2>
-        </div>
+        </Link>
     )
 }

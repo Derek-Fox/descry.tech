@@ -1,0 +1,29 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5em;
+}
+
+.algorithm {
+    display: flex;
+
+    flex-direction: column;
+
+    height: 100%;
+    margin-bottom: 7em;
+}
+
+.title {
+    font-size: 1.2em;
+    margin-bottom: 2em;
+}
+
+.description {
+    font-size: 1em;
+}
+
+.description li {
+    margin-bottom: 0.8em;
+}
