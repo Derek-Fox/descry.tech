@@ -4,6 +4,7 @@ import processing.core.PConstants;
 
 public interface Constants {
 
+    //TODO: Make this an enum or something.
     int CENTER = PConstants.CENTER;
     int TOP = PConstants.TOP;
     int BOTTOM = PConstants.BOTTOM;
