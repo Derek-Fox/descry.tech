@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Descry/Descry.iml" filepath="$PROJECT_DIR$/Descry/Descry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Descry/Examples/Examples.iml" filepath="$PROJECT_DIR$/Descry/Examples/Examples.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/descry.tech.iml" filepath="$PROJECT_DIR$/.idea/descry.tech.iml" />
     </modules>
   </component>
