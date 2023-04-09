@@ -74,6 +74,24 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+
+                <div className={styles.usage} id="usage">
+                    <h1>
+                        Usage
+                    </h1>
+                    <ol>
+                        <li>
+                            Select the algorithm you would like to visualize from the homepage.
+                        </li>
+                        <li>
+                            Download the listed <strong>jar</strong> file.
+                            (NOTE: You must have <strong>Java</strong> installed!)
+                        </li>
+                        <li>
+                            Execute the downloaded file and enjoy your visualization!
+                        </li>
+                    </ol>
+                </div>
             </main>
         </>
     )

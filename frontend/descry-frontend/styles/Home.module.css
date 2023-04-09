@@ -81,8 +81,8 @@
 }
 
 .infoBoxImg {
-  width: 128px;
-  height: 128px;
+  width: 150px;
+  height: 150px;
 
   padding-top: 1em;
   padding-bottom: 1em;
@@ -94,6 +94,37 @@
 
 .infoBox h1 {
   display: inline;
+}
+
+.usage {
+  margin-top: 1.5em;
+  font-size: 1.3em;
+}
+
+.usage ol {
+  counter-reset: item;
+}
+
+.usage h1 {
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.usage ol li {
+  display: block;
+  margin-bottom: 1em;
+}
+
+.usage ol li:before {
+  font-size: 1.4em;
+  content: counter(item) ". ";
+  counter-increment: item;
+  font-weight: bold;
+}
+
+.usage li::marker {
+  font-weight: bold;
+  margin-bottom: 0.5em;
 }
 
 .description a {
