@@ -22,7 +22,11 @@
 
 .launch {
     margin: 5em auto;
-    font-size: 1.6em;
+    font-size: 1.8em;
     width: 15em;
     height: 5em;
+
+    border: none;
+    outline: 1px solid black;
+    border-radius: 7px;
 }
