@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Descry" />
+    <orderEntry type="library" name="core1" level="project" />
   </component>
 </module>
