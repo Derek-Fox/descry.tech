@@ -12,28 +12,99 @@ public class MazeSolver extends MazeGenerator {
         super(sizeX, sizeY);
     }
 
-    public Queue<int[]> solve(VisualDebugger graphics, boolean[][][] maze, int startX, int startY, int endX, int endY) {
+    Cell[][] grid;
 
-        boolean[][] visited = new boolean[_gridSizeX][_gridSizeY];
+    static final class Cell {
+        private final boolean[] paths;
+        private int[] lastCell;
+        private boolean visited;
+        private boolean inPath;
+
+        Cell(boolean[] paths, int[] lastCell, boolean visited, boolean inPath) {
+            this.paths = paths;
+            this.lastCell = lastCell;
+            this.visited = visited;
+        }
+
+        public boolean[] paths() {
+            return paths;
+        }
+
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj == this) return true;
+            if (obj == null || obj.getClass() != this.getClass()) return false;
+            var that = (Cell) obj;
+            return Objects.equals(this.paths, that.paths) &&
+                    Objects.equals(this.lastCell, that.lastCell) &&
+                    this.visited == that.visited;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(paths, lastCell, visited);
+        }
+
+        @Override
+        public String toString() {
+            return "Cell[" +
+                    "paths=" + paths + ", " +
+                    "lastCell=" + lastCell + ", " +
+                    "visited=" + visited + ']';
+        }
+
+
+    }
+
+    public void solve(VisualDebugger graphics, boolean[][][] maze, int startX, int startY, int endX, int endY) {
+
+        Cell[][] cellArray = new Cell[_gridSizeX][_gridSizeY];
+        for (int i = 0; i < _gridSizeX; i++) {
+            for (int j = 0; j < _gridSizeY; j++) {
+                boolean[] paths = {
+                        maze[i][j][0],
+                        maze[i][j][1],
+                        maze[i][j][2],
+                        maze[i][j][3]
+                };
+
+                cellArray[i][j] = new Cell(paths, new int[]{-1, -1}, false, false);
+            }
+        }
+
+        renderFrame(graphics, cellArray);
+
         Queue<int[]> queue = new LinkedList<>();
-        queue.add(new int[] { startX, startY });
+        queue.add(new int[]{startX, startY});
 
         while (!queue.isEmpty()) {
 
-            renderFrame(graphics, maze, visited);
+            renderFrame(graphics, cellArray);
 
             int[] current = queue.poll();
             int x = current[0];
             int y = current[1];
             if (x == endX && y == endY) {
-                return queue;
+                while (cellArray[x][y].lastCell[0] != -1) {
+                    cellArray[x][y].inPath = true;
+                    renderFrame(graphics, cellArray);
+                    int nextX = cellArray[x][y].lastCell[0];
+                    int nextY = cellArray[x][y].lastCell[1];
+                    x = nextX;
+                    y = nextY;
+                }
+
+                cellArray[startX][startY].inPath = true;
+                renderFrame(graphics, cellArray);
+                return;
             }
 
-            visited[x][y] = true;
+            cellArray[x][y].visited = true;
 
             for (Direction direction : Direction.values()) {
 
-                if (!maze[x][y][direction.ordinal()]) {
+                if (!cellArray[x][y].paths[direction.ordinal()]) {
                     continue;
                 }
 
@@ -41,16 +112,17 @@ public class MazeSolver extends MazeGenerator {
                 int nextY = y + direction.Y;
                 boolean xInRange = 0 <= nextX && nextX < _gridSizeX;
                 boolean yInRange = 0 <= nextY && nextY < _gridSizeY;
-                if (xInRange && yInRange && !visited[nextX][nextY]) {
-                    queue.add(new int[] {nextX, nextY});
+                if (xInRange && yInRange && !cellArray[nextX][nextY].visited) {
+                    cellArray[nextX][nextY].lastCell[0] = x;
+                    cellArray[nextX][nextY].lastCell[1] = y;
+                    queue.add(new int[]{nextX, nextY});
                 }
             }
         }
 
-        return queue;
     }
 
-    private void renderFrame(VisualDebugger graphics, boolean[][][] maze, boolean[][] visited) {
+    private void renderFrame(VisualDebugger graphics, Cell[][] cellArray) {
 
         if (graphics == null) {
             return;
@@ -68,7 +140,9 @@ public class MazeSolver extends MazeGenerator {
         for (int x = 0; x < _gridSizeX; ++x) {
             for (int y = 0; y < _gridSizeY; ++y) {
 
-                if (visited[x][y]) {
+                if (cellArray[x][y].inPath) {
+                    graphics.fillColor(227, 180, 39);
+                } else if (cellArray[x][y].visited) {
                     graphics.fillColor(255);
                 } else {
                     graphics.fillColor(220);
@@ -88,7 +162,7 @@ public class MazeSolver extends MazeGenerator {
                 graphics.strokeWeight(3f);
 
                 for (Direction direction : Direction.values()) {
-                    if (!maze[x][y][direction.ordinal()]) { // Passable?
+                    if (!cellArray[x][y].paths[direction.ordinal()]) { // Passable?
 
                         if (direction.X != 0) {
                             graphics.line(
@@ -105,6 +179,7 @@ public class MazeSolver extends MazeGenerator {
                 }
             }
         }
+
         graphics.endFrame();
     }
 
@@ -118,7 +193,8 @@ public class MazeSolver extends MazeGenerator {
                 graphics.getSizeX() * 0.8f,
                 graphics.getSizeY() * 0.8f
         );
-        boolean[][][] maze = generatePaths(graphics);
+        graphics.setFrameRate(20);
+        boolean[][][] maze = generatePaths(null);
         solve(graphics, maze, 0, 0, _gridSizeX - 1, _gridSizeY - 1);
     }
 }
