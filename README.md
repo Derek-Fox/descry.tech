@@ -14,3 +14,15 @@ To offer an interactive learning experience, the Descry includes executable JAR 
 
 ## 3. Conclusion
 Descry serves as an innovative approach to algorithm education, offering an interactive, visual platform that makes complex concepts more accessible. The project highlights the importance of collaboration, communication, and adaptability in overcoming the challenges of diverse skill sets and limited experience working together. As a result, Descry not only provides an invaluable learning resource but also stands as a testament to the potential of interdisciplinary teamwork in software development.
+
+
+# Quickstart Guide \ Debian
+```bash
+git clone https://github.com/Derek-Fox/descry.tech.git
+mv descry.tech/descry-update.sh .
+bash descry-update.sh
+```
+Access this on http://localhost:3005 once it is installed
+
+## How it's made
+This is a react website that is packaged in a docker container and the script will compile the container locally with the name and tag 'descry' then run that container. This makes deployment and scalability very easy as NPM can be a bit tricky but the docker file takes care of all of that.
